@@ -1,1 +1,61 @@
-<p>list-actes-mariages works!</p>
+<div class="container mt-4">
+    <div class="card shadow mb-4">
+        <div class="card-header text-black text-center text-uppercase bold">
+            Liste des actes de naissances
+        </div>
+        <div class="card-body"  style="width: fit-content;">
+        <table class="table table-striped">
+            <tr class="text-white" style="background-color: rosybrown;">
+                <th>ID</th><th>Acte</th><th>Prenom Marie</th><th>Nom Marie</th>
+                <th>Adress Marie</th>
+                <th>Prenom Femme</th><th>Nom Femme</th><th>Adresse Femme</th><th>Option</th><th>Régime Matrimoniale</th>
+                <th>--</th><th>Action</th><th>--</th>
+            </tr>
+            <tbody *ngFor="let mariage of mariages">
+                <tr>
+                    <td>{{mariage.id}}</td>
+                    <td>{{mariage.num_acte}}</td>
+                    <!--<td>{{mariage.prenom_officier}}</td>
+                    <td>{{mariage.nom_officier}}</td> -->
+                    <td>{{mariage.prenom_marie}}</td>
+                    <td>{{mariage.nom_marie}}</td>
+                    <td>{{mariage.adress_marie}}</td>
+                    <!--<td>{{mariage.prenom_pere_du_marie}}</td>
+                    <td>{{mariage.prenom_maman_marie}}</td>
+                    <td>{{mariage.nom_maman_du_marie}}</td> -->
+                    <td>{{mariage.prenom_fem}}</td>
+                    <td>{{mariage.nom_fem}}</td>
+                    <td>{{mariage.adress_fem}}</td>
+                    <!--<td>{{mariage.prenom_pere_fem}}</td>
+                    <td>{{mariage.prenom_maman_fem}}</td>
+                    <td>{{mariage.nom_maman_fem}}</td> -->
+                    <td>{{mariage.option}}</td>
+                    <td>{{mariage.regime_matrimoniale}}</td>
+                   <!-- <td><a class="btn btn-outline-danger" (click)="deleteVisite(visite)">Supprimer</a></td> -->
+                    <td>
+                        <span class="material-icons text-white p-2 rounded-circle btn" style="background-color: rosybrown;" [routerLink]="['/editMariage', mariage.id]">
+                        edit
+                      </span>
+                    </td>
+                    <td>
+                        <span class="material-icons text-white p-2 rounded-circle btn" style="background-color: rosybrown;" [routerLink]="['/mariage', mariage.id]">
+                        keyboard_arrow_right
+                      </span>
+                    </td>
+                    <td>
+                        <span class="material-icons text-white p-2 rounded-circle btn" style="background-color: rosybrown;" (click)="supprimerMariage(mariage)">
+                            delete
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-outline-secondary d-flex" [routerLink] = "['/add-acte-naissance']">
+            <span class="material-icons">add</span>
+            ajouter un acte de naissance
+        </button>
+    </div>
+ </div>
+</div>
