@@ -5,14 +5,14 @@ export class Acte_Naissance {
     region: string;
     departement: string;
     arrondissement: string;
-    collectivité_locale: string;
+    collectivite_locale: string;
     centre: string;
     annee_extrait_int: Date;
     annee_extrait_string: string;
     num_extrait_int: number;
     num_extrait_string: string;
     date_naissance: Date;
-    heure_naissance: Time;
+    heure_naissance: Date;
     sexe_enfant: string;
     lieu_de_naissance: string;
     nom_enfant: string;

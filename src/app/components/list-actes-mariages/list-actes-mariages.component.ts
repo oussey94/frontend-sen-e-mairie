@@ -24,7 +24,7 @@ export class ListActesMariagesComponent implements OnInit {
   }
 
   supprimerMariage(mariage : Acte_Mariage) : void{
-    let conf = confirm("Etes vous certains de vouloir supprimé l'acte de naissance ??");
+    let conf = confirm("Etes vous certains de vouloir supprimé l'acte de mariage ??");
     if(conf){
       this.mariageService.deleteMariage(mariage.id).subscribe(() =>{
         this.supprimerMariageDuTableau(mariage);
