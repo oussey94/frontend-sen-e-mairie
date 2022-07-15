@@ -4,7 +4,7 @@
             Liste des actes de naissances
         </div>
         <div class="card-body"  style="width: fit-content;">
-        <table class="table table-striped">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table table-striped">
             <tr class="text-white" style="background-color: rosybrown;">
                 <th>ID</th><th>Prenom Enfant</th><th>Nom Enfant</th>
                 <th>Prenom Pere</th><th>Collectivité locale</th><th>Numéro Extrait</th><th>Date de Naissance</th><th>Sexe</th><th>Lieu de naissance</th>
@@ -45,7 +45,7 @@
         </table>
     </div>
     <div class="card-footer">
-        <button class="btn btn-outline-secondary d-flex" [routerLink] = "['/add-acte-naissance']">
+        <button class="btn btn-outline-secondary d-flex" [routerLink] = "['/add-naissance']">
             <span class="material-icons">add</span>
             ajouter un acte de naissance
         </button>
