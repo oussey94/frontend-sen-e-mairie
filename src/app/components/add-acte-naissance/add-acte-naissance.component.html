@@ -1,0 +1,57 @@
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button>
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="naissanceForm">
+      <form [formGroup]="naissanceForm">
+        <ng-template matStepLabel>Vos Informations Personnels</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Nom</mat-label>
+          <input matInput placeholder="Votre nom de famille" formControlName="nom_enfant" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Prenom</mat-label>
+            <input matInput placeholder="Votre prenom" formControlName="prenom_enfant" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Date de naissance</mat-label>
+            <input matInput placeholder="Votre date de naissance" formControlName="date_naissance" required>
+          </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="naissanceForm" label="Les Informations relatives à vos parents">
+      <form [formGroup]="naissanceForm">
+        <mat-form-field appearance="fill">
+          <mat-label>Prenom</mat-label>
+          <input matInput formControlName="prenom_pere" placeholder="Le prenom de votre Père"
+                 required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Nom Mère</mat-label>
+            <input matInput formControlName="nom_maman" placeholder="Le nom de famille de votre Maman"
+                   required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Prenom</mat-label>
+            <input matInput formControlName="prenom_maman" placeholder="Le prenom de votre Maman"
+                   required>
+          </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+  
