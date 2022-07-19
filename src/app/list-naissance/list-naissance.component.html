@@ -1,0 +1,101 @@
+
+
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+      </div>
+    </div>
+  </div>
+  <!-- Page content -->
+  <div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+            <div class="col-md-12">
+                <div class="card">
+                  <div
+                    class="card-header card-header-white row"
+                    style="background-color: rosybrown  ">
+                    <div class="col-md-1">
+                      <button mat-raised-button>
+                        <a (click)="onCreate()">
+                          <mat-icon>add</mat-icon>
+                        </a>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="search-div" class="col-md-9">
+                        <mat-form-field class="search-form-field" floatLabel="never">
+                          <input
+                            matInput
+                            [(ngModel)]="searchKey"
+                            placeholder="Search"
+                            autocomplete="off"
+                            (keyup)="applyFilter()"/>
+                          <button
+                            mat-button
+                            matSuffix
+                            mat-icon-button
+                            aria-label="Clear"
+                            *ngIf="searchKey"
+                            (click)="onSearchClear()" >
+                            <mat-icon>close</mat-icon>
+                          </button>
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-3">
+                        <button mat-raised-button>
+                        </button>
+                      </div>
+                    </div>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="matricule">
+        <th mat-header-cell *matHeaderCellDef>ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.matricule}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="numeroRegistre">
+        <th mat-header-cell *matHeaderCellDef> numeroRegistre </th>
+        <td mat-cell *matCellDef="let element"> {{element.numeroRegistre}} </td>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <!-- <ng-container matColumnDef=" dateNaissance">
+        <th mat-header-cell *matHeaderCellDef> date Naissance </th>
+        <td mat-cell *matCellDef="let element"> {{element.dateNaissance}} </td>
+      </ng-container> -->
+      <ng-container matColumnDef="lieuNaissance">
+        <th mat-header-cell *matHeaderCellDef> lieuNaissance</th>
+        <td mat-cell *matCellDef="let element"> {{element.lieuNaissance}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons 
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+  
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

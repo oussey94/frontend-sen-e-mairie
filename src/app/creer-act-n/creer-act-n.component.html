@@ -1,0 +1,98 @@
+<!-- <mat-dialog-content>  -->
+    <div class="card-header bg-white border-0">
+        <div class="row align-items-center">
+          <div class="col-10">
+            <h3 class="mb-0">Creation de Naissance</h3>
+          </div>
+          <!-- <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1" ><mat-icon>clear</mat-icon></button> -->
+        </div>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="registerForm">
+          <h6 class="heading-small text-muted mb-4">information de l'Utilisateur</h6>
+          <!-- <div class="pl-lg-4"> -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="pr-4 mt-4">
+                    <mat-label class="enteteccColor">numeroRegistre<span class="text-red">*</span></mat-label>
+                    <input formControlName="numeroRegistre" minlength="2" maxlength="50" matInput class="enteteccColor" [autocomplete]="'off'" type="text">
+                    <mat-error class="topError">
+                        Le champ nom est requis
+                    </mat-error>
+                </mat-form-field>
+                </div>
+              </div>
+               <div class="col-md-6">
+                <div class="form-group">
+                    <mat-form-field appearance="outline" class="pr-4 mt-4">
+                        <mat-label class="enteteccColor">non pere<span class="text-red">*</span></mat-label>
+                        <input formControlName="nomPere" minlength="2" maxlength="50" matInput class="enteteccColor" [autocomplete]="'off'" type="text">
+                        <mat-error class="topError">
+                            Le champ nom est requis
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+              </div> 
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                    <mat-form-field appearance="outline" class="pr-4 mt-4">
+                        <mat-label class="enteteccColor">nomComplet mere<span class="text-red">*</span></mat-label>
+                        <input formControlName="nomComplet" minlength="2" maxlength="50" matInput class="enteteccColor" [autocomplete]="'off'" type="text">
+                        <mat-error class="topError">
+                            Le champ nomComplet est requis
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+              </div>  
+             <div class="col-lg-6">
+                <div class="form-group">
+                    <mat-form-field appearance="outline" class="pr-4 mt-4">
+                        <mat-label class="enteteccColor">annee<span class="text-red">*</span></mat-label>
+                        <input formControlName="annee" minlength="2" maxlength="50" matInput class="enteteccColor" [autocomplete]="'off'" type="text">
+                        <mat-error class="topError">
+                            Le champ annee est requis
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+              </div> 
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                      <mat-form-field appearance="outline" class="pr-4 mt-4">
+                          <mat-label class="enteteccColor">dateNaissance<span class="text-red">*</span></mat-label>
+                          <input formControlName="dateNaissance" minlength="2" maxlength="50" matInput class="enteteccColor" [autocomplete]="'off'" type="text">
+                          <mat-error class="topError">
+                              Le champ date de naissance est requis
+                          </mat-error>
+                      </mat-form-field>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                      <mat-form-field appearance="outline" class="pr-4 mt-4">
+                          <mat-label class="enteteccColor">lieuNaissance<span class="text-red">*</span></mat-label>
+                          <input formControlName="lieuNaissance" minlength="2" maxlength="50" matInput class="enteteccColor" [autocomplete]="'off'" type="text">
+                          <mat-error class="topError">
+                              Le champ lieu de naissance est requis
+                          </mat-error>
+                      </mat-form-field>
+                  </div>
+                </div>
+              </div>
+          <!-- </div> -->
+          <hr class="my-4" />
+          <button mat-raised-button type="submit"  [disabled]="loading" class="btn  pull-right" style="background-color: #50A125;">
+            Valider
+        </button>
+        <button mat-raised-button type="submit"  (click)="onClose()" [disabled]="loading" class="btn  pull-left" style="background-color: red;">
+            Annuler
+        </button>
+        <div class="clearfix"></div>
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        </form>
+      </div>
+    <!-- </mat-dialog-content> -->
