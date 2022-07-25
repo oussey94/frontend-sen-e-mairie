@@ -1,0 +1,54 @@
+<div class="container mt-4">
+    <div class="card shadow mb-4">
+        <div class="card-header text-black text-center text-uppercase bold">
+            Liste des actes de naissances
+        </div>
+        <div class="card-body"  style="width: fit-content;">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table table-striped">
+            <tr class="text-white" style="background-color: rosybrown;">
+                <th>ID</th><th>Prenom Enfant</th><th>Nom Enfant</th>
+                <th>Prenom Pere</th><th>Collectivité locale</th><th>Numéro Extrait</th><th>Date de Naissance</th><th>Sexe</th><th>Lieu de naissance</th>
+                <th>--</th><th>Action</th><th>--</th>
+            </tr>
+            <tbody *ngFor="let naissance of naissances">
+                <tr>
+                    <td>{{naissance.id}}</td>
+                    <td>{{naissance.prenom_enfant}}</td>
+                    <td>{{naissance.nom_enfant}}</td>
+                    <td>{{naissance.prenom_pere}}</td>
+                    <td>{{naissance.collectivite_locale}}</td>
+                    
+                    <td>{{naissance.num_extrait_int}}</td>
+                    <td>{{naissance.date_naissance | date:"dd/MM/yyyy"}}</td>
+                    
+                    <td>{{naissance.sexe_enfant}}</td>
+                    <td>{{naissance.lieu_de_naissance}}</td>
+
+                   <!-- <td><a class="btn btn-outline-danger" (click)="deleteVisite(visite)">Supprimer</a></td> -->
+                    <td>
+                        <span class="material-icons text-white p-2 rounded-circle btn" style="background-color: rosybrown;" (click)="updateActeDeNaissance(naissance)" >
+                        edit
+                      </span>
+                    </td>
+                    <td>
+                        <span class="material-icons text-white p-2 rounded-circle btn" style="background-color: rosybrown;" [routerLink]="['/naissance', naissance.id]">
+                        keyboard_arrow_right
+                      </span>
+                    </td>
+                    <td>
+                        <span class="material-icons text-white p-2 rounded-circle btn" style="background-color: rosybrown;" (click)="supprimerNaissance(naissance)">
+                            delete
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-outline-secondary d-flex" [routerLink] = "['/add-naissance']">
+            <span class="material-icons">add</span>
+            ajouter un acte de naissance
+        </button>
+    </div>
+ </div>
+</div>

@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8">
+<title>Gestion des Produits</title>
+</head>
+<body>
+<header>
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rosybrown;">
   <a class="navbar-brand" href="#">E-MAIRIE(logo)</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,9 +31,9 @@
           E-SERVICE
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Acte de naissance</a>
-          <a class="dropdown-item" href="#">Acte de mariage</a>
-          <a class="dropdown-item" href="#">Acte de décès</a>
+          <a class="dropdown-item" [routerLink]="['/naissances']" routerLinkActive="router-link-active"  >Acte de naissance</a>
+          <a class="dropdown-item" [routerLink]="['/mariages']" routerLinkActive="router-link-active" >Acte de mariage</a>
+          <a class="dropdown-item" [routerLink]="['/deces']" routerLinkActive="router-link-active" >Acte de décès</a>
           <a class="dropdown-item" href="#">Autorisation de construction</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Autres</a>
@@ -40,4 +48,10 @@
   -->
   </div>
 </nav>
+</header>
+
+<div class="container-fluid">
 <router-outlet></router-outlet>
+</div>
+</body>
+</html>

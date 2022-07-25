@@ -1,0 +1,86 @@
+<div class="container">
+  <mat-stepper #stepper>
+    <mat-step [stepControl]="naissanceForm">
+      <form [formGroup]="naissanceForm">
+        <ng-template matStepLabel>Vos Informations Personnels</ng-template>
+        <div class="row mb-2">
+        <div class="col-md-3"></div>
+        <mat-form-field class="col-md-6" appearance="fill">
+          <mat-label>Nom</mat-label>
+          <input matInput  placeholder="Votre nom de famille" formControlName="nom_enfant" required>
+        </mat-form-field>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-3"></div>
+        <mat-form-field class="col-md-6" appearance="fill">
+            <mat-label>Prenom</mat-label>
+            <input matInput placeholder="Votre prenom" formControlName="prenom_enfant" required>
+          </mat-form-field>
+        <div class="col-md-3"></div>
+        </div>
+        <div class="row mb-2">
+        <div class="col-md-3"></div>
+          <mat-form-field class="col-md-6" appearance="fill">
+            <mat-label>Date de naissance</mat-label>
+            <input matInput type="date" placeholder="Votre date de naissance" formControlName="date_naissance" required>
+          </mat-form-field>
+        <div class="col-md-3"></div>
+        <div>
+          <button type="button" class="btn btn-outline-secondary" mat-button matStepperNext>Suivant</button>
+        </div>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="naissanceForm" label="Les Informations relatives à vos parents">
+      <form [formGroup]="naissanceForm">
+        <div class="row mb-2">
+          <div class="col-md-3"></div>
+        <mat-form-field class="col-md-6" appearance="fill">
+          <mat-label>Prenom</mat-label>
+          <input matInput formControlName="prenom_pere" placeholder="Le prenom de votre Père"
+                 required>
+        </mat-form-field>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-3"></div>
+        <mat-form-field class="col-md-6" appearance="fill">
+            <mat-label>Nom Mère</mat-label>
+            <input matInput formControlName="nom_maman" placeholder="Le nom de famille de votre Maman"
+                   required>
+          </mat-form-field>
+          <div class="col-md-3"></div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-3"></div>
+          <mat-form-field class="col-md-6" appearance="fill">
+            <mat-label>Prenom</mat-label>
+            <input matInput formControlName="prenom_maman" placeholder="Le prenom de votre Maman" required>
+          </mat-form-field>
+          <div class="col-md-3"></div>
+          </div>
+        <div>
+          <button type="button" class="btn btn-outline-secondary mr-2" mat-button matStepperPrevious>Retour</button>
+          <button type="button" class="btn btn-outline-secondary" mat-button matStepperNext>Suivant</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Terminer</ng-template>
+      <div class="row mb-2">
+        <div class="col-md-4"></div>
+      
+      <div>
+        <br>
+        <p>Vous avez maintenant terminé ! <br></p>
+        <button type="button" class="btn btn-outline-secondary mr-2" mat-button matStepperPrevious>Retour</button>
+        <button type="button" class="btn btn-outline-secondary mr-2" mat-button (click)="stepper.reset()">Réinitialiser</button>
+        <button type="button" class="btn btn-outline-secondary" mat-button matStepperPrevious>Sauvegarder</button>
+      </div>
+      <div class="col-md-4"></div>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>
+  
