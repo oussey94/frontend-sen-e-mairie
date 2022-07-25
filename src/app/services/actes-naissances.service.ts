@@ -111,6 +111,21 @@ export class ActesNaissancesService {
     return this.naissances;
   }
 
+  consulterNaissance(id:number): Acte_Naissance{
+    return this.naissances.find(p => p.id == id);
+   
+    }
+
+  ajouterNaiss(acte: Acte_Naissance){
+      this.naissances.push(acte);
+    }
+
+  updateNaiss(a: Acte_Naissance){
+      this.ajouterNaiss(a);
+      
+    }
+//=============================================================
+
   public getAllNaissances(): Observable<Acte_Naissance[]>{
     return this.http.get<Acte_Naissance[]>(this.url_acte_naissance);
   }

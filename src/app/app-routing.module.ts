@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AddActeDeceComponent } from './components/add-acte-dece/add-acte-dece.component';
 import { AddActeNaissanceComponent } from './components/add-acte-naissance/add-acte-naissance.component';
+import { DetailActeNaissanceComponent } from './components/detail-acte-naissance/detail-acte-naissance.component';
 import { ListActesDecesComponent } from './components/list-actes-deces/list-actes-deces.component';
 import { ListActesMariagesComponent } from './components/list-actes-mariages/list-actes-mariages.component';
 import { ListActesNaissancesComponent } from './components/list-actes-naissances/list-actes-naissances.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: "mariages", component: ListActesMariagesComponent},
   {path: "deces", component: ListActesDecesComponent},
   {path: "naissances", component: ListActesNaissancesComponent},
+  {path: "naissance/:id", component: DetailActeNaissanceComponent},
   {path: "add-naissance", component: AddActeNaissanceComponent},
   {path: "add-dece", component: AddActeDeceComponent},
   {path: "add-mariage", component: WeddingComponent}

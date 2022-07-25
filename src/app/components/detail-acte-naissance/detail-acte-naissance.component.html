@@ -1,0 +1,64 @@
+<div class="container mt-4">
+  <div class="card shadow mb-4">
+      <div class="card-header text-black text-center text-uppercase bold">
+          Les details de l'acte de naissance
+      </div>
+    
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-4">Nom de Famille</div>
+                    <div class="col-md-8">{{naissance.nom_enfant}}</div>
+
+                </div>
+                <hr>
+
+                <div class="row">
+                  <div class="col-md-4">Prenom</div>
+                  <div class="col-md-8">{{naissance.prenom_enfant}}</div>
+
+              </div>
+              <hr>
+              
+              <div class="row">
+                <div class="col-md-4">Date de naissance</div>
+                <div class="col-md-8">{{naissance.date_naissance }}</div>
+
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-md-4">Prenom Père</div>
+              <div class="col-md-8">{{naissance.prenom_pere}}</div>
+
+          </div>
+          <hr>
+
+          <div class="row">
+            <div class="col-md-4">Nom de la mère</div>
+            <div class="col-md-8">{{naissance.nom_maman}}</div>
+
+        </div>
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">Nom de la mère</div>
+          <div class="col-md-8">{{naissance.prenom_maman}}</div>
+
+      </div>
+      <hr>
+
+            </div>
+    
+    </div>
+  </div>
+
+  <div class="card-footer">
+      <button class="btn btn-outline-secondary d-flex" (click)="backToList()">
+          <span class="material-icons">keyboard_arrow_left</span>
+          retour à la liste
+      </button>
+  </div>
+</div>
+</div>

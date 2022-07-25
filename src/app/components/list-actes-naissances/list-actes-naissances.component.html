@@ -26,7 +26,7 @@
 
                    <!-- <td><a class="btn btn-outline-danger" (click)="deleteVisite(visite)">Supprimer</a></td> -->
                     <td>
-                        <span class="material-icons text-white p-2 rounded-circle btn" style="background-color: rosybrown;" [routerLink]="['/editNaissance', naissance.id]">
+                        <span class="material-icons text-white p-2 rounded-circle btn" style="background-color: rosybrown;" (click)="updateActeDeNaissance(naissance)" >
                         edit
                       </span>
                     </td>

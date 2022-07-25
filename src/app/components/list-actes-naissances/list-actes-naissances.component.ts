@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
 import { Acte_Naissance } from 'src/app/models/acte-naissance.model';
 import { ActesNaissancesService } from 'src/app/services/actes-naissances.service';
+import { EditActeNaissanceComponent } from '../edit-acte-naissance/edit-acte-naissance.component';
 
 @Component({
   selector: 'app-list-actes-naissances',
@@ -14,13 +16,16 @@ export class ListActesNaissancesComponent implements OnDestroy,OnInit {
   public naissances: Acte_Naissance[];
   dtTrigger: Subject<any> = new Subject<any>();
 
-  constructor( private naissanceServices: ActesNaissancesService) { }
+  constructor( 
+    private naissanceServices: ActesNaissancesService,
+    private dialog: MatDialog
+    ) { }
 
   ngOnInit(): void {
 
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 4,
+      pageLength: 3,
       //autoWidth: true,
      // dom: 'Bfrtip',
       //buttons: ['copy','csv','excel','pdf','print'],
@@ -48,6 +53,7 @@ export class ListActesNaissancesComponent implements OnDestroy,OnInit {
 
     //pour le test sans API
     this.naissances = this.naissanceServices.listNaissance();
+    this.dtTrigger.next(true);
 
     this.naissanceServices.getAllNaissances().subscribe(data =>{
       console.log("les Dataa",data);
@@ -74,6 +80,20 @@ export class ListActesNaissancesComponent implements OnDestroy,OnInit {
     this.naissances.forEach((curr, index) =>{
       if(naissance.id === curr.id){
         this.naissances.splice(index, 1);
+      }
+    });
+  }
+
+  updateActeDeNaissance(data: Acte_Naissance): void{
+    const dialogRef = this.dialog.open(EditActeNaissanceComponent, {
+      width: '2000px',
+      data: data
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.naissanceServices.updateNaiss(data);
+        this.naissanceServices.updateNaissance(data.id,data).subscribe();
       }
     });
   }
